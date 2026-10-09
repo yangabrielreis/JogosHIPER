@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Torre de Hanói{% endblock %}
+{% block head %}
+<style>
+  #mesa { display: flex; justify-content: space-around; align-items: flex-end; height: 260px; margin: 1rem 0; }
+  .pino { position: relative; width: 30%; height: 100%; display: flex; flex-direction: column;
+          justify-content: flex-end; align-items: center; cursor: pointer; border-radius: 8px; }
+  .pino::before { content: ""; position: absolute; bottom: 0; width: 8px; height: 100%; background: #667; border-radius: 4px; z-index: 0; }
+  .pino.sel { background: rgba(59,91,219,.25); }
+  .disco { height: 24px; margin-top: 2px; border-radius: 6px; z-index: 1; }
+  .base { height: 8px; background: #667; border-radius: 4px; margin-bottom: 1rem; }
+</style>
+{% endblock %}
+{% block content %}
+<h1>Torre de Hanói</h1>
+<p>Clique no pino de origem e depois no de destino. Mova todos os discos para o pino 3.</p>
+<p>
+  Discos: <select id="n"></select>
+  <button id="novo">Novo jogo</button>
+  <button id="resolver">Resolver sozinho</button>
+</p>
+<p>Movimentos: <b id="mov">0</b> (mínimo: <b id="min">7</b>)</p>
+<div id="mesa"></div>
+<div class="base"></div>
+<p class="msg" id="msg"></p>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('hanoi.static', filename='hanoi.js') }}"></script>
+{% endblock %}

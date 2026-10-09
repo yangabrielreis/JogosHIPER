@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Forca{% endblock %}
+{% block head %}
+<style>
+  #palavra { font-size: 2.4rem; letter-spacing: .4rem; font-family: monospace; margin: 1rem 0; }
+  #teclado { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; max-width: 520px; margin: 0 auto 1rem; }
+  #teclado button { width: 2.6rem; padding: .5rem 0; }
+  svg line, svg circle { stroke: #e8eaf0; stroke-width: 4; fill: none; stroke-linecap: round; }
+</style>
+{% endblock %}
+{% block content %}
+<h1>Forca</h1>
+<svg id="boneco" width="200" height="220" viewBox="0 0 200 220">
+  <line x1="20" y1="210" x2="180" y2="210"/>
+  <line x1="60" y1="210" x2="60" y2="20"/>
+  <line x1="60" y1="20" x2="140" y2="20"/>
+  <line x1="140" y1="20" x2="140" y2="45"/>
+  <circle id="p1" cx="140" cy="65" r="20"/>
+  <line id="p2" x1="140" y1="85" x2="140" y2="140"/>
+  <line id="p3" x1="140" y1="100" x2="115" y2="125"/>
+  <line id="p4" x1="140" y1="100" x2="165" y2="125"/>
+  <line id="p5" x1="140" y1="140" x2="120" y2="180"/>
+  <line id="p6" x1="140" y1="140" x2="160" y2="180"/>
+</svg>
+<p>Erros: <b id="erros">0</b> / <span id="max">6</span></p>
+<div id="palavra"></div>
+<p class="msg" id="msg"></p>
+<div id="teclado"></div>
+<button id="novo">Nova palavra</button>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('forca.static', filename='forca.js') }}"></script>
+{% endblock %}

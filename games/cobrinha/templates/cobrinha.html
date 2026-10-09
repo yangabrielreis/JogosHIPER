@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Cobrinha{% endblock %}
+{% block content %}
+<h1>Cobrinha</h1>
+<p>Setas ou WASD para mover. Coma a comida e não bata em nada!</p>
+<p>Pontos: <b id="pontos">0</b> &nbsp;|&nbsp; Recorde: <b id="recorde">0</b></p>
+<canvas id="tela" width="400" height="400" style="background:#0b0e14;border:2px solid #3b5bdb;border-radius:8px"></canvas>
+<p class="msg" id="msg"></p>
+<button id="reiniciar">Novo jogo</button>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('cobrinha.static', filename='cobrinha.js') }}"></script>
+{% endblock %}
