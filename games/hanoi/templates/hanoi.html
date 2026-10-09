@@ -3,8 +3,8 @@
 {% block head %}
 <style>
   #mesa { display: flex; justify-content: space-around; align-items: flex-end; height: 260px; margin: 1rem 0; }
-  .pino { position: relative; width: 30%; height: 100%; display: flex; flex-direction: column;
-          justify-content: flex-end; align-items: center; cursor: pointer; border-radius: 8px; }
+  .pino { position: relative; width: 30%; height: 100%; display: flex; flex-direction: column-reverse;
+          justify-content: flex-start; align-items: center; cursor: pointer; border-radius: 8px; }
   .pino::before { content: ""; position: absolute; bottom: 0; width: 8px; height: 100%; background: #667; border-radius: 4px; z-index: 0; }
   .pino.sel { background: rgba(59,91,219,.25); }
   .disco { height: 24px; margin-top: 2px; border-radius: 6px; z-index: 1; }
