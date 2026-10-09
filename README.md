@@ -16,4 +16,4 @@ games/
   cobrinha/  routes.py  templates/  static/cobrinha.js   # lógica em JS, Flask guarda recorde
   forca/     logica.py  routes.py   templates/  static/  # regras em Python, estado na session
   hanoi/     logica.py  routes.py   templates/  static/  # regras + solução recursiva em Python
-``
+```
